@@ -394,7 +394,7 @@ func clusterInfoToReportResources(allArtifact []*artifacts.Artifact) (*core.Comp
 				}
 				ver := sanitizedVersion(c.Version)
 
-				imagePURL, err := purl.NewPackageURL(purl.TypeOCI, types.Metadata{
+				imagePURL, err := purl.New(purl.TypeOCI, types.Metadata{
 					RepoDigests: []string{
 						fmt.Sprintf("%s@%s", name, cDigest),
 					},
